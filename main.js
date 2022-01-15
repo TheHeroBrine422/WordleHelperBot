@@ -49,16 +49,6 @@ for (var i = 0; i < words.length; i++) {
 
 words = temp
 
-for (var i = 0; i < charset.length; i++) { // create freq sorted 2d array
-  freq[charset.charAt(i)] = 0
-}
-
-for (var i = 0; i < words.length; i++) {
-  for (var j = 0; j < words[i].length; j++) {
-    freq[words[i].charAt(j)]++
-  }
-}
-
 function getValidWords() {
   validWords = []
   yellowChars += greenChars.join('')
@@ -89,6 +79,8 @@ function getValidWords() {
       }
     }
 
+    if (!valid) {continue}
+
     if (!allowDouble) {
       for (var j = 0; j < words[i].length; j++) {
         for (var k = j+1; k < words[i].length; k++) {
@@ -112,13 +104,31 @@ function getValidWords() {
     if (!valid) {continue}
 
     if (valid) {
-      score = 0
-      for (var j = 0; j < words[i].length; j++) {
-        score += freq[words[i].charAt(j)]
-      }
-      validWords.push([words[i],score])
+      validWords.push(words[i])
     }
   }
+
+  for (var i = 0; i < charset.length; i++) { // create freq sorted 2d array
+    freq[charset.charAt(i)] = 0
+  }
+
+  for (var i = 0; i < validWords.length; i++) {
+    for (var j = 0; j < validWords[i].length; j++) {
+      freq[validWords[i].charAt(j)]++
+    }
+  }
+
+  scoredValidWords = []
+
+  for (var i = 0; i < validWords.length; i++) {
+    score = 0
+    for (var j = 0; j < validWords[i].length; j++) {
+      score += freq[validWords[i].charAt(j)]
+    }
+    scoredValidWords.push([validWords[i],score])
+  }
+
+  validWords = JSON.parse(JSON.stringify(scoredValidWords)) // making sure its fully pass by value
 
   validWords.sort(compareSecondColumn);
 }
