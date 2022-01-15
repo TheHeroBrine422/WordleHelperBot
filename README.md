@@ -16,7 +16,7 @@ Basically how this script works is it uses a combination of word frequency proba
 With this information it can make very good gusses to weed out lots of possible options, and can filter to a very small number of words in some cases.
 For example with just the guess arose with it being yellow, green, yellow, grey, grey it filters the possible words from over 8 thousand to 4 words. At that point you are guaranteed to win.
 Currently it works pretty well, but it's gusses will not make you win everytime. One limitation is that it always uses known letters so if you need lots of information and have 3+ green characters it will have problems.
-An example of this is if you get that the last 4 characters are ared, there are 8 words that end in ared and it has no clue how to help you with this. What it/you need to do is find a word that has most of the first letters in it to get more information. The frequency information it gives also becomes less and less helpful the more characters you have solved, so looking at that in the late game is not very helpful. it should use which words weed out the most words for ranking once there are few words left, but this is hard.
+An example of this is if you get that the last 4 characters are ared, there are 8 words that end in ared and it has no clue how to help you with this. What it/you need to do is find a word that has most of the first letters in it to get more information. The frequency information it gives also becomes less and less helpful the more characters you have solved, so looking at that in the late game is not very helpful. it should use which words weed out the most words for ranking once there are few words left, but this is hard. Currently there is a 2nd script that can generate good words for checking things like this but it has to be done manually.
 
 This script also gives some valuable insights even if not being used during a game.
 For example, arose is the one best starting word due to it typically containing the 5 most common letters.
@@ -68,10 +68,22 @@ It also gives this frequency chart for knowing how likely a character is to show
 1. Set the wordlist based on the above information
 1. Run `node main.js`
 1. Follow the instructions given in the terminal.
+1. If you get stuck in a situation where you have __ing and have few gusses left and many options, use lowLetterInfo.js to generate good words for knocking out many options.
+
+##### lowLetterInfo.js Usage:
+
+1. set wordlist to same wordlist as main.js on line 3 of lowLetterInfo.js
+1. List the letters that you need to check in wantedLetters on line 4.
+1. Run `node lowLetterInfo.js`
 
 ### Example Usage:
 
+Main.js:
 ![picture of gameplay at https://github.com/TheHeroBrine422/WordleHelperBot/blob/main/example.png](https://github.com/TheHeroBrine422/WordleHelperBot/blob/main/example.png?raw=true)
+
+lowLetterInfo.js:
+![picture of lowLetterInfo at https://github.com/TheHeroBrine422/WordleHelperBot/blob/main/lowLetterExample.png](https://github.com/TheHeroBrine422/WordleHelperBot/blob/main/lowLetterExample.png?raw=true)
+
 
 ### combiner.js
 
