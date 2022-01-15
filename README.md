@@ -66,6 +66,10 @@ It also gives this frequency chart for knowing how likely a character is to show
 1. Run `node main.js`
 1. Follow the instructions given in the terminal.
 
+### Example Usage:
+
+![picture of gameplay at https://github.com/TheHeroBrine422/WordleHelperBot/blob/main/example.png](https://github.com/TheHeroBrine422/WordleHelperBot/blob/main/example.png?raw=true)
+
 ### combiner.js
 
 This repo also contains a very simple combination script to combine the wordlists I have found into one large wordlist. Read the code if you want more information.
