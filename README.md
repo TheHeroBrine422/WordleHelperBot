@@ -3,7 +3,7 @@ A Script to give suggestions for Wordle
 
 This script comes with 4 word lists. This is set on line 4 in main.js.
 
-If you don't know what wordlist to use, use words.json. (DEFAULT) (150kb of 5 letter words)
+If you don't know what wordlist to use, use words.json. (150kb of 5 letter words)
 
 If you are on https://swag.github.io/evil-wordle/ use evilwords.json (125kb of 5 letter words)
 
@@ -15,7 +15,8 @@ If you are on https://www.wordleunlimited.com/ use unlimitedwords.json (71kb of 
 Basically how this script works is it uses a combination of word frequency probability by having the word list of the game, and then filtering based on the information you give it.
 With this information it can make very good gusses to weed out lots of possible options, and can filter to a very small number of words in some cases.
 For example with just the guess arose with it being yellow, green, yellow, grey, grey it filters the possible words from over 8 thousand to 4 words. At that point you are guaranteed to win.
-Currently it works pretty well, but it's gusses will not make you win everytime. One limitation is that it always uses known letters so if you need lots of information and have 3 green characters it will have problems.
+Currently it works pretty well, but it's gusses will not make you win everytime. One limitation is that it always uses known letters so if you need lots of information and have 3+ green characters it will have problems.
+An example of this is if you get that the last 4 characters are ared, there are 8 words that end in ared and it has no clue how to help you with this. What it/you need to do is find a word that has most of the first letters in it to get more information.
 
 This script also gives some valuable insights even if not being used during a game.
 For example, arose is the best starting word due to it containing the 5 most common letters.

@@ -1,7 +1,7 @@
 const fs = require('fs')
 const rl = require('readline-sync')
 
-let words = JSON.parse(fs.readFileSync("words.json").toString())
+let words = JSON.parse(fs.readFileSync("unlimitedwords.json").toString())
 let charset = "abcdefghijklmnopqrstuvwxyz"
 let validWords = []
 let freq = {}
