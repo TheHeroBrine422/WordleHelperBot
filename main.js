@@ -138,7 +138,6 @@ function getInput() {
 }
 
 console.log("Wordle Helper:\n\nExample for entering guesses:\n\nEnter your selected guess: arose\nEnter the values of your guess: 12100\n\nThat means that AO are yellow, R is green, and SE are grey.\n")
-console.log(JSON.stringify(words).length)
 
 for (var j = 0; j < 10; j++) {
   getValidWords()
