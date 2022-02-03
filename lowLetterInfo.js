@@ -1,7 +1,7 @@
 const fs = require('fs')
 
-let words = JSON.parse(fs.readFileSync("unlimitedwords.json").toString())
-let wantedLetters = "bghzmw"
+let words = JSON.parse(fs.readFileSync("powerwords.json").toString())
+let wantedLetters = ""
 let scoredWords = []
 
 function removeDuplicateCharacters(string) { // https://grabthiscode.com/javascript/javascript-remove-duplicate-letters-in-a-string
